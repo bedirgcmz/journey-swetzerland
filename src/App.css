@@ -1,0 +1,9 @@
+.not-chosen {
+  color: #f44336;
+  margin-top: 20px;
+}
+.cities-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}

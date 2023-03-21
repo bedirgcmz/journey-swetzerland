@@ -1,0 +1,32 @@
+.navbar-container {
+  border-bottom: 6px solid rgb(83, 84, 91);
+}
+.navbar {
+  background-color: #2196f3;
+}
+
+.navbar-logo {
+  color: #f8f9fa;
+  margin: 0;
+}
+.nav-link {
+  color: white !important;
+  font-size: 20px;
+}
+.for-swetzerland {
+  color: #f8f8f8;
+  position: absolute;
+  top: 43px;
+  left: 28px;
+  font-size: 10px;
+}
+.info-use-cities {
+  background-color: #ffeb3b66;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 512px) {
+  .for-swetzerland {
+    left: 20px;
+  }
+}
