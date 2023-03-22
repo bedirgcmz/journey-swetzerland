@@ -5,13 +5,13 @@ import JourneyEntre from "./components/JourneyEntre";
 import JourneyHeader from "./components/JourneyHeader";
 
 function App() {
-  // const firstDate = `${new Date().getFullYear()}-${
-  //   new Date().getMonth() + 1
-  // }-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}`;
+  const firstDate = `${new Date().getFullYear()}-${
+    new Date().getMonth() + 1
+  }-${new Date().getDate()}T${new Date().getHours()}:${new Date().getMinutes()}`;
   const [route, setRoute] = useState("");
-  const [departure, setDeparture] = useState("");
-  const [arrival, setArrival] = useState("");
-  const [journeyDate, setJourneyDate] = useState(``);
+  const [departure, setDeparture] = useState("bern");
+  const [arrival, setArrival] = useState("zurih");
+  const [journeyDate, setJourneyDate] = useState(`${firstDate}`);
 
   /**
    * This function fetch data from API.
@@ -28,9 +28,9 @@ function App() {
   /**
    * This function re-executes the data fetching function when the states change.
    */
-  // useEffect(() => {
-  //   getJourneyInfo();
-  // }, [route]);
+  useEffect(() => {
+    getJourneyInfo();
+  });
 
   return (
     <div className="App">
