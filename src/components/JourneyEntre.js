@@ -3,7 +3,14 @@ import { useState } from "react";
 import { Container, Row, Col, Input, Table, Button, FormGroup, Form } from "reactstrap";
 import JourneyTable from "./JourneyTable";
 
-const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRoute }) => {
+const JourneyEntre = ({
+  getJourneyInfo,
+  setArrival,
+  setDeparture,
+  setJourneyDate,
+  route,
+  setRoute,
+}) => {
   const [departureValue, setDepartureValue] = useState("");
   const [arrivalValue, setArrivalValue] = useState("");
   const [dateValue, setDateValue] = useState("");
@@ -17,6 +24,7 @@ const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRout
     setDeparture(departureValue);
     setArrival(arrivalValue);
     setJourneyDate(dateValue);
+    getJourneyInfo();
   };
 
   /**
@@ -27,7 +35,6 @@ const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRout
     setArrivalValue("");
     setDateValue("");
     setRoute("");
-    console.log(route);
   };
 
   return (
@@ -35,9 +42,18 @@ const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRout
       <h2>Connection Search</h2>
       <Row>
         <Col xs="12" md="4" className="bg-light border p-3">
+          {/* <div className="change-cities">
+            {" "}
+            Change Cities
+            <i
+              onClick={() => changeCities()}
+              className="fa-solid fa-right-left text-primary ms-2"
+            ></i>
+          </div> */}
           <Form inline>
-            <FormGroup className="mb-2 me-sm-2 mb-sm-0 d-inline">
+            <FormGroup className=" me-sm-2 mb-sm-0 d-inline departure-input">
               <Input
+                id="departure"
                 name="departure"
                 placeholder="locating..."
                 type="text"
@@ -47,6 +63,7 @@ const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRout
             </FormGroup>
             <FormGroup className="mb-2 me-sm-2 mb-sm-0 d-inline">
               <Input
+                id="arrival"
                 name="arrival"
                 placeholder="to..."
                 type="text"
@@ -88,9 +105,9 @@ const JourneyEntre = ({ setArrival, setDeparture, setJourneyDate, route, setRout
                 <li>Lugano</li>
               </ul>
               <ul>
-                <li>Montrö</li>
-                <li>Viva</li>
-                <li>Ascona</li>
+                <li>Lucerne</li>
+                <li>Schwyz</li>
+                <li>Zug</li>
               </ul>
             </div>
           </div>
